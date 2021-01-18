@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var falseButton: UIButton!
     @IBOutlet weak var progressBar: UIProgressView!
     
-    let quiz = [ "Is Berlin the capital of Germany", "is Bill Gate the founder of Apple", " 4 + 3 = 7"]
+    let quiz = [[ "Is Berlin the capital of Germany", "True"], ["is Bill Gate the founder of Apple", "False"], [" 4 + 3 = 7", "True"]]
     
     var questionNumber = 0
     
@@ -26,12 +26,21 @@ class ViewController: UIViewController {
     }
 
     @IBAction func answerButtonPressed(_ sender: UIButton) {
+        let userAnswer = sender.currentTitle
+        
+        let actualAnswer = quiz[questionNumber][1]
+        
+        if userAnswer == actualAnswer {
+            print("Right")
+        }else {
+            print("Wrong")
+        }
         questionNumber += 1
         updateUI()
     }
     
     func updateUI( ) {
-        questionLabel.text = quiz[questionNumber]
+        questionLabel.text = quiz[questionNumber][0]
         
         
     }
