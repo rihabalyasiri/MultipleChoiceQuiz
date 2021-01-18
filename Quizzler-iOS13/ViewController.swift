@@ -32,6 +32,8 @@ class ViewController: UIViewController {
     
     func updateUI( ) {
         questionLabel.text = quiz[questionNumber]
+        
+        
     }
     
 }
