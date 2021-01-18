@@ -43,6 +43,8 @@ class ViewController: UIViewController {
         questionLabel.text = quiz[questionNumber][0]
         
         
+        
+        
     }
     
 }
